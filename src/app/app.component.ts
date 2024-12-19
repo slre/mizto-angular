@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { BannerComponent } from './banner/banner.component';
+import { CardsComponent } from './cards/cards.component';
+import { SocialComponent } from './social/social.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [BannerComponent, CardsComponent, SocialComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

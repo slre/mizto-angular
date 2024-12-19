@@ -1,0 +1,33 @@
+<section class="container py-5">
+  <h2 class="text-center mb-4">Sección de productos</h2>
+  <div class="row">
+    <div class="col-md-4 mb-4" *ngFor="let card of cards">
+      <div class="card h-100 text-center border-0">
+        <div class="position-relative">
+          <img [src]="card.imgUrl" class="card-img" [alt]="card.title">
+          <!-- <button class="product-card-button btn btn-transparent position-absolute top-80 start-50 translate-middle" data-bs-toggle="modal" [attr.data-bs-target]="'#' + card.modalId">
+            Ver más
+          </button> -->
+          <button class="product-card-button btn  position-absolute top-80 start-50" data-bs-toggle="modal" [attr.data-bs-target]="'#' + card.modalId">
+            Ver más
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modales -->
+<div *ngFor="let card of cards">
+  <div class="modal fade modal-product" [id]="card.modalId" tabindex="-1" [attr.aria-labelledby]="card.modalId + 'Label'" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" [id]="card.modalId + 'Label'">{{ card.title }}</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">{{ card.description }}</div>
+      </div>
+    </div>
+  </div>
+</div>
